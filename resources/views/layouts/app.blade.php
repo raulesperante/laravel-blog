@@ -54,8 +54,10 @@
     </div>
   </nav>
 
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+  <!-- Page Header -->s
+  
+  
+  <header class="masthead" style="background-image: url({{ asset('img/home-bg.jpg') }})">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
