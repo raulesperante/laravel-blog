@@ -5,39 +5,44 @@
 <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
 <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
 <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+
+{!! Form::open(['route' => 'user.store']) !!}
+
 <form name="sentMessage" id="contactForm" novalidate>
+{{ csrf_field() }}
     <div class="control-group">
         <div class="form-group floating-label-form-group controls">
-            <label>Name</label>
-            <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+            {!! Form::label('Nombre') !!}
+            {!! Form::text('name', null, ['class' => 'form-control',
+            'placeholder' => 'Name', 'required']) !!}
             <p class="help-block text-danger"></p>
         </div>
     </div>
     <div class="control-group">
         <div class="form-group floating-label-form-group controls">
-            <label>Email Address</label>
-            <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-            <p class="help-block text-danger"></p>
-        </div>
-    </div>
-    <div class="control-group">
-        <div class="form-group col-xs-12 floating-label-form-group controls">
-            <label>Phone Number</label>
-            <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+            {!! Form::label('Email Address') !!}
+            {!! Form::email('email', null, ['class' => 'form-control',
+            'placeholder' => 'Email Address', 'required',
+            'required data-validation-required-message' => 'Please enter your email address.']) !!}
             <p class="help-block text-danger"></p>
         </div>
     </div>
     <div class="control-group">
         <div class="form-group floating-label-form-group controls">
-            <label>Message</label>
-            <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+           <p id="p-password">Password</p>
+            {!! Form::label('password', 'Password') !!}
+            {!! Form::password('password', ['class' => 'form-control',
+            'placeholder' => 'Password', 'required',
+            'data-validation-required-message' => 'Please enter a message']) !!}
             <p class="help-block text-danger"></p>
         </div>
     </div>
     <br>
     <div id="success"></div>
     <div class="form-group">
-        <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+        {!! Form::submit('Registrame', ['class' => 'btn btn-primary',
+        'id' => 'sendMessageButton']) !!}
     </div>
 </form>
+{!! Form::close() !!}
 @endsection

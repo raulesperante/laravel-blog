@@ -10,6 +10,20 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+    <style>
+        #password{
+            border: 1px solid #CCC;
+            
+        }
+        
+        #p-password{
+            font-size: 1.5em;
+            color:#868E96;
+            margin-botton: 0px !important; 
+        }
+    
+    </style>
+
   <title>Clean Blog - Start Bootstrap Theme</title>
 
   <!-- Bootstrap core CSS -->
