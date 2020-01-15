@@ -55,20 +55,23 @@
             <a class="nav-link" href="{{route('index')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('about')}}">About</a>
+            <a class="nav-link" href="{{route('about')}}">Acerca de</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="post.html">Sample Post</a>
+              <a class="nav-link" href="{{route('user.create')}}">Registrarme</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('contact')}}">Contact</a>
+              <a class="nav-link" href="{{route('user.index')}}">Ver usuario</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('contact')}}">Contacto</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Page Header -->s
+  <!-- Page Header -->
   
   
   <header class="masthead" style="background-image: url({{ asset('img/home-bg.jpg') }})">

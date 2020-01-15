@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request,
     App\User,
-    Hash;
+    Hash,
+    Redirect;
 
 
 class UserController extends Controller
 {
     public function index(){
-        return 'Estas en el index';
+        $users = User::all();
+        return view('users.index')->with('users', $users);
     }
     
     public function show($id){
@@ -28,7 +30,7 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
         
-        return "Registrado correctamente";
+        return Redirect::to('user');
     }
     
     public function update(Request $request, $id){
