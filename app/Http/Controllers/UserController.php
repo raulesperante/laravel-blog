@@ -34,6 +34,7 @@ class UserController extends Controller
     }
     
     public function edit($id){
+        // Encuentro un usuario, es un select
         $user = User::find($id);
         return view("users.edit")->with('user', $user);
         
@@ -51,6 +52,11 @@ class UserController extends Controller
     }
     
     public function destroy($id){
-        
+        User::destroy($id);
+        return Redirect::to('user');
+        /* Segunda forma 
+        $user = User::find($id);
+        $user->delete($id);
+        */ 
     }
 }

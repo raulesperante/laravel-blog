@@ -34,4 +34,12 @@
     </div>
 </form>
 {!! Form::close() !!}
+
+{!! Form::model($user, array('route' => ['user.destroy', $user->id],
+'method' => 'delete')) !!}
+    <div class="form-group">
+        {!! Form::submit('Eliminar', ['class' => 'btn btn-danger eliminar',
+        'id' => 'sendMessageButton']) !!}
+    </div>
+{!! Form::close() !!}
 @endsection

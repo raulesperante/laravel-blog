@@ -21,6 +21,10 @@
             color:#868E96;
             margin-botton: 0px !important; 
         }
+        
+        .eliminar{
+            width: 151px;
+        }
     
     </style>
 
