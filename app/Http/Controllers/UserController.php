@@ -42,7 +42,12 @@ class UserController extends Controller
     public function update(Request $request, $id){
         // Encontrar usuario
         $user = User::find($id);
-        return $user;
+        // Esto es un update
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+        
+        return Redirect::to('user');
     }
     
     public function destroy($id){

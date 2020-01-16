@@ -6,8 +6,7 @@
 <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
 <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
 
-{!! Form::open(['route' => 'user.store']) !!}
-
+{!! Form::model($user, array('route' => ['user.update', $user->id], 'method' => 'put')) !!}
 <form name="sentMessage" id="contactForm" novalidate>
 {{ csrf_field() }}
     <div class="control-group">
