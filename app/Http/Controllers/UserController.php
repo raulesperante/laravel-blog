@@ -33,8 +33,16 @@ class UserController extends Controller
         return Redirect::to('user');
     }
     
-    public function update(Request $request, $id){
+    public function edit($id){
+        $user = User::find($id);
+        return view("users.edit")->with('user', $user);
         
+    }
+    
+    public function update(Request $request, $id){
+        // Encontrar usuario
+        $user = User::find($id);
+        return $user;
     }
     
     public function destroy($id){

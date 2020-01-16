@@ -18,7 +18,7 @@
             <td>{{$user->email}}</td>
             <td>{{$user->created_at->format('d-m-Y')}}</td>
             <td>
-                <button type="button" class="btn btn-success btn-sm">Editar</button>
+                <a href="{{ route('user.edit', $user->id) }}" class="btn btn-success btn-sm text-light">Editar</a>
             </td>
       </tbody>
   @endforeach
