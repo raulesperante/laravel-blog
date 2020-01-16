@@ -7,6 +7,8 @@ use Illuminate\Http\Request,
     Hash,
     Redirect;
 
+use Illuminate\Support\Facades\DB;
+
 
 class UserController extends Controller
 {
@@ -19,6 +21,7 @@ class UserController extends Controller
         return $id;
     }
     
+
     public function create(){
         return view('users.create');
     }
@@ -59,4 +62,6 @@ class UserController extends Controller
         $user->delete($id);
         */ 
     }
+    
+
 }
