@@ -61,9 +61,34 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('about')}}">Acerca de</a>
           </li>
+          
+          {{-- Llamamos al usuarios que esta en la sesion actual --}}
+          {{-- Si hay un usuario con sesion iniciada --}}
+          
+          @if(!Auth::user())
+          
           <li class="nav-item">
               <a class="nav-link" href="{{route('user.create')}}">Registrarme</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{url('/auth')}}">Iniciar sesión</a>
+          </li>          
+          
+          @else
+          
+          <div class="dropdown">
+              <button style="font-size:0.6em; padding-top:0.8em;" class="btn dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{Auth::user()->name}}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Ver perfil</a>
+                <a class="dropdown-item" href="{{url('logout')}}">Logout</a>
+              </div>
+          </div>
+         
+         @endif
+          
+
           <li class="nav-item">
               <a class="nav-link" href="{{route('user.index')}}">Ver usuario</a>
           </li>

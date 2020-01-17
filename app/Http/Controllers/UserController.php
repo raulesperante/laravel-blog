@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request,
     App\User,
     Hash,
-    Redirect;
+    Redirect,
+    App\Http\Requests\UserRequest;
 
 use Illuminate\Support\Facades\DB;
 
@@ -29,12 +30,17 @@ class UserController extends Controller
         return view('users.create');
     }
     
-    public function store(Request $request){
+    public function store(Request $request, UserRequest $validator){
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->save();
+        
+        
+        // Método abreviado para crear usuario
+        // @request es un array con los datos
+        // User::create($request);
         
         return Redirect::to('user');
     }

@@ -25,8 +25,9 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::resource('user', 'UserController');
+Route::resource('auth', 'AuthController');
 
-
+Route::get('/logout', 'AuthController@logout');
 
 
 
