@@ -18,10 +18,11 @@
             <td>{{$user->email}}</td>
             <td>{{$user->created_at->format('d-m-Y')}}</td>
             <td>
-                <a href="{{ route('user.edit', $user->id) }}" class="btn btn-success btn-sm text-light">Editar</a>
+                <a href="{{ route('user.edit', $user->id) }}" class="btn btn-success btn-sm text-light ">Editar</a>
             </td>
       </tbody>
   @endforeach
 </table>
+{{-- Paginacion --}}
+{!! $users->render() !!}
 @endsection
-<i class="fas fa-pencil-alt"></i>

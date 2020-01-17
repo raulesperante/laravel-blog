@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     public function index(){
-        $users = User::all();
+        // Traer todos
+        // $users = User::all();
+        // Paginacion: 5 datos
+        $users = User::paginate(5);
         return view('users.index')->with('users', $users);
     }
     

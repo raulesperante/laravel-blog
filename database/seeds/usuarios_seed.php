@@ -18,7 +18,7 @@ class usuarios_seed extends Seeder
             DB::table('users')
                 ->insert(array(
                 'name' => "Usuario " . $i,
-                'email' => "email" . $i . "@email.com",
+                'email' => uniqid() . "@email.com",
                 'password' => $secure,
                 'created_at' => date("Y-m-d H:i:s")    
             ));
