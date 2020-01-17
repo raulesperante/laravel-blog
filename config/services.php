@@ -29,5 +29,13 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    
+    // Ocultar estos datos al subir la aplicacion a git
+    
+    'facebook' => [
+        'client_id' => env('485340738793723'),
+        'client_secret' => env('f4f5ab6c54ac11c9634e5e2a467b071a'),
+        'redirect' => env('http://localhost/laravel-blog/public/auth/facebook/callback'),
+      ],
 
 ];
