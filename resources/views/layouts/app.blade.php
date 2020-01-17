@@ -159,7 +159,7 @@
               </a>
             </li>
           </ul>
-          <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
+          <p class="copyright text-muted">Copyright &copy; Your Website {{date('Y')}}</p>
         </div>
       </div>
     </div>
