@@ -19,7 +19,7 @@
         #p-password{
             font-size: 1.5em;
             color:#868E96;
-            margin-botton: 0px !important; 
+            margin-bottom: 0px !important; 
         }
         
         .eliminar{
