@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request,
     Auth,
-    Redirect;
+    Redirect,
+    Socialite;
 
 class AuthController extends Controller
 {
@@ -26,6 +27,30 @@ class AuthController extends Controller
     public function logout(){
         Auth::logout();
         return Redirect::to('/');
+    }
+    
+    
+    /**
+     * Redirect the user to the Facebook authentication page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function redirectToProvider()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    
+    /**
+     * Obtain the user information from Facebook.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleProviderCallback()
+    {
+        $user = Socialite::driver('faceook')->user();
+
+        // $user->token;
     }
     
 }

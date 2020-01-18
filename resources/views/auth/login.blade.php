@@ -31,7 +31,7 @@
     </div>
     <div class="control-group">
         <div class="form-group floating-label-form-group controls">
-           <p id="p-password">Password</p>
+           {{--<p id="p-password">Password</p>--}}
             {!! Form::label('password', 'Password') !!}
             {!! Form::password('password', ['class' => 'form-control',
             'placeholder' => 'Password', 'required',
@@ -44,6 +44,10 @@
     <div class="form-group">
         {!! Form::submit('Iniciar sesión', ['class' => 'btn btn-primary',
         'id' => 'sendMessageButton']) !!}
+        
+        <a style="margin-left:1em;" class="btn btn-primary" href="{{url('login/facebook')}}">
+            Login with Facebook
+        </a>
     </div>
 </form>
 {!! Form::close() !!}

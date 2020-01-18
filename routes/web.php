@@ -29,6 +29,8 @@ Route::resource('auth', 'AuthController');
 
 Route::get('/logout', 'AuthController@logout');
 
+Route::get('login/facebook', 'AuthController@redirectToProvider');
+Route::get('login/facebook/callback', 'AuthController@handleProviderCallback');
 
 
 

@@ -35,7 +35,7 @@ return [
     'facebook' => [
         'client_id' => env('485340738793723'),
         'client_secret' => env('f4f5ab6c54ac11c9634e5e2a467b071a'),
-        'redirect' => env('http://localhost/laravel-blog/public/auth/facebook/callback'),
+        'redirect' => env('http://localhost/laravel-blog/public/login/facebook/callback'),
       ],
 
 ];
