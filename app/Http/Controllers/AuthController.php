@@ -48,9 +48,22 @@ class AuthController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('faceook')->user();
+        $user = Socialite::driver('facebook')->user();
 
-        // $user->token;
+        $user->token;
+
+        //$tokenSecret = $user->tokenSecret;
+	
+	// All Providers
+	$user->getId();
+	$user->getNickname();
+	$user->getName();
+	$user->getEmail();
+	$user->getAvatar();
+
+
+	return var_dump($user); die();
+
     }
     
 }
