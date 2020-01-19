@@ -108,6 +108,9 @@
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">Ver perfil</a>
+	  	 <li class="nav-item">
+          	    <a class="nav-link" href="{{url('/articles/create')}}">Crear artículo</a>
+          	 </li> 
                 <a class="dropdown-item" href="{{url('logout')}}">Logout</a>
               </div>
           </div>

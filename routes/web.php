@@ -26,11 +26,17 @@ Route::get('/about', function () {
 
 Route::resource('user', 'UserController');
 Route::resource('auth', 'AuthController');
+Route::resource('articles', 'ArticleController');
 
 Route::get('/logout', 'AuthController@logout');
 
 Route::get('login/facebook', 'AuthController@redirectToProvider');
 Route::get('login/facebook/callback', 'AuthController@handleProviderCallback');
 
+/*
+Route::get('/prueba', function(){
+	return view('articles.create');
+})->name('articles.store');
+ */
 
 
