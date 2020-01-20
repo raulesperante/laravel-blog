@@ -51,7 +51,9 @@
        }(document, 'script', 'facebook-jssdk'));
     </script>
 
-  <title>Clean Blog - Start Bootstrap Theme</title>
+<script src="{{ asset('ckeditor/ckeditor.js')  }}"></script>
+
+<title>Clean Blog - Start Bootstrap Theme</title>
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -202,6 +204,9 @@
   <!-- Custom scripts for this template -->
   {!! Html::script("js/clean-blog.min.js") !!}
 
-</body>
+<script>
+CKEDITOR.replace('summary-ckeditor');
+</script>
 
+</body>
 </html>

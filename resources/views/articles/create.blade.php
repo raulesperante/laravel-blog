@@ -23,7 +23,7 @@
         <div class="form-group floating-label-form-group controls">
             {!! Form::label('Content') !!}
             {!! Form::textarea('body', null, ['class' => 'form-control',
-            'placeholder' => 'Your content', 'required',
+            'placeholder' => 'Your content', 'id' => 'summary-ckeditor',
             'required data-validation-required-message' => 'Please enter your content']) !!}
             <p class="help-block text-danger"></p>
         </div>
