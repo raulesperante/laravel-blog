@@ -12,7 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    $articles = App\Article::all();
+
+    foreach ($articles as $article){
+        $postedBy = App\User::find($article->user_id);
+	return view('index')
+		->with('postedBy', $postedBy)
+		->with('articles', $articles);
+    }
 })->name('index');
 
 
