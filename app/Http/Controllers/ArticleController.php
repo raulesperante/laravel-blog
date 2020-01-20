@@ -66,7 +66,8 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+	$article = Article::find($id);
+	return view('articles.edit')->with('article', $article);
     }
 
     /**
@@ -78,7 +79,12 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+	$art = Article::find($id);
+	$art->title = $request->title;
+	$art->body = $request->body;
+	$art->save();
+
+	return Redirect::to('/');
     }
 
     /**
@@ -89,6 +95,7 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+	Article::destroy($id);
+	return Redirect::to('/');
     }
 }
