@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request,
     Auth,
     Redirect,
-    Socialite;
+    Socialite,
+    App\User;
 
 class AuthController extends Controller
 {
@@ -49,21 +50,17 @@ class AuthController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('facebook')->user();
+     
+        $user_db = User::where('email', $user->getEmail())->first();
 
-        $user->token;
+        if($user_db->email == $user->getEmail()){
+            Auth::login($user_db, true);
+            return redirect()->to('/');
+        }else{
+            return "Tu email: {$user->getEmail()} no está registrado en esta página";
+        }
 
-        //$tokenSecret = $user->tokenSecret;
-	
-	// All Providers
-	$user->getId();
-	$user->getNickname();
-	$user->getName();
-	$user->getEmail();
-	$user->getAvatar();
-
-
-	return var_dump($user); die();
-
+ 
     }
     
 }
