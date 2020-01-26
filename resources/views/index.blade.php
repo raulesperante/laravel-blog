@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 @foreach($articles as $article)
 <div class="post-preview">
     <a href="articles/{{$article->id}}">
@@ -13,13 +15,13 @@
 	    {!! $article->body !!}
         </h3>
     </a>
-    <p class="post-meta">Posted by {{$postedBy->name}}
+    <p class="post-meta">Posted by {{$postedBy[$article->user_id]}}
     </p>
 </div>
 <hr>
 @endforeach
 <!-- Pager -->
-<div class="clearfix">
-    <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+<div style="display: flex; justify-content:center">
+{!! $articles->render() !!}
 </div>
 @endsection

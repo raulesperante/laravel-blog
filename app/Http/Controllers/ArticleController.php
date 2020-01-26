@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Article;
 use Auth;
 use Redirect;
+use App\User;
 
 class ArticleController extends Controller
 {
@@ -16,7 +17,16 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::paginate(3);
+   
+        $postedBy = array();
+        foreach ($articles as $article){
+            $posted = User::find($article->user_id);
+            $postedBy[$article->user_id] = $posted->name;
+        }
+        return view('index')
+            ->with('postedBy', $postedBy)
+            ->with('articles', $articles);
     }
 
     /**

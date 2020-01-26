@@ -11,17 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    $articles = App\Article::all();
 
-    foreach ($articles as $article){
-        $postedBy = App\User::find($article->user_id);
-	return view('index')
-		->with('postedBy', $postedBy)
-		->with('articles', $articles);
-    }
+Route::get('/', 'ArticleController@index')->name('index');
+
+
+
+/*
+Route::get('/', function () {
+    
+
+
+	return view('index');
+    
 })->name('index');
 
+*/
 
 Route::get('/contact', function () {
     return view('contact');
