@@ -2,8 +2,7 @@
 
 @section('content')
 
-
-
+@if($articles)
 @foreach($articles as $article)
 <div class="post-preview">
     <a href="articles/{{$article->id}}">
@@ -24,4 +23,5 @@
 <div style="display: flex; justify-content:center">
 {!! $articles->render() !!}
 </div>
+@endif
 @endsection
