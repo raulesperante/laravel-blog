@@ -1,3 +1,0 @@
-Sintaxis
-Laravel Colective
-{!! Html:image('img/completar...') !!}
